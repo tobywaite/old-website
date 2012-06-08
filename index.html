@@ -2,13 +2,63 @@
 <html lang="en">
   <head>
     <title>Toby Waite</title>
-    <link rel="stylesheet/less" type="text/css" href="less/bootstrap/bootstrap.less">
-    <link rel="stylesheet/less" type="text/css" href="less/main.less">
-    <script src="js/less.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <h1>Hey look, a website!</h1>
-    <p>I'm toby. This is my web-presence. Want to get in touch with me? <a href="http://www.twitter.com/tobywaite">@tobywaite</a> isn't a bad way.</p>
-    <p>Pretend that there is an early-90s 'under construction' gif here. in the mean time, take a look at <a href='www.github.com/tobywaite'>my github</a> for some things I've been working on.</p>
+    <div class='fluid-container'>
+      <section id='header' class='row'>
+        <div id='bgpattern' class='row'><!--emptydiv--></div>
+        <div class='span4 offset1'>
+          <h1 class="visible-phone">Toby Waite <small>A&nbsp;Website</small></h1>
+          <img id='blogshot' src='img/blogshot.jpg' alt="Hi! I'm Toby"/>
+        </div>
+        <div class='span7'>
+          <h1 class="hidden-phone">
+            <span class="visible-desktop">Hello,&nbsp;I'm&nbsp;</span>
+            Toby&nbsp;Waite
+            <small class="visible-desktop">and this is a website!</small>
+          </h1>
+          <h2 class="visible-desktop">I've left a few footprints on this internet thing:</h2>
+          <div id='media-links'>
+            <ul>
+              <li><a href="http://www.twitter.com/tobywaite"><img class='icon' src='img/icons/twitter.png' alt='@tobywaite'></a></li>
+              <li><a href="http://www.linkedin.com/tobywaite"><img class='icon' src='img/icons/linkedin.png' alt='linkedin/tobywaite'></a></li>
+              <li><a href="http://www.last.fm/users/thebrokenfish"><img class='icon' src='img/icons/lastfm.png' alt='lastfm/thebrokenfish'></a></li>
+              <li><a href="http://plus.google.com/somebullshit"><img class='icon' src='img/icons/google.png' alt='google/toby.waite'></a></li>
+              <li><a href="http://www.flickr.com/users/toby.waite"><img class='icon' src='img/icons/flickr.png' alt='flicker/toby.waite'></a></li>
+              <li><a href="http://www.facebook.com/twaite"><img class='icon' src='img/icons/facebook.png' alt='facebook/twaite'></a></li>
+              <li><a href="http://www.github.com/tobywaite"><img class='icon' src='img/icons/github.png' alt='github/tobywaite'></a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section id='content' class="row offset1">
+        <div class="page-header">
+          <h1>This is a collection of my wanderings.</h1>
+        </div>
+        <div class="row">
+          <div class='span11' id='blog'>
+            BlogContent
+          </div>
+        </div>
+        <div class="row">
+          <div class='span5' id='github'>
+            GithubContent
+          </div>
+          <div class='span5 offset1' id='twitter'>
+            TwitterContent
+          </div>
+        </div>
+        <div class="row">
+          <div class='span5' id='lastfm'>
+            LastFMContent
+          </div>
+          <div class='span5 offset1' id='flickr'>
+            FlickrContent
+          </div>
+        </div>
+      </section>
+    </div>
   </body>
 </html>

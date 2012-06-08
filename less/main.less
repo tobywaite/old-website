@@ -1,0 +1,113 @@
+@base-height: 250px;
+
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300);
+@import url(http://fonts.googleapis.com/css?family=Quicksand:400);
+@import "../css/bootstrap.css";
+
+@baseFontSize: 64px;
+@baseLineHeight: 64px;
+@baseFontColor: #111;
+@iconSize: 38px;
+
+@width-large: 1200px;
+@width-default: 980px;
+@width-tablet: 767px;
+@width-phone: 480px;
+
+@headerDepth-large: 360px;
+@headerDepth-default: 265px;
+@headerDepth-tablet: 245px;
+@headerDepth-phone: 0px;
+
+@media (min-width: @width-large) {
+}
+@media (min-width: @width-default) and {
+}
+@media (min-width: @width-tablet) {
+}
+@media (min-width: @width-phone) {
+}
+
+#bgpattern {
+  margin-bottom: 15px;
+  background-image: url("../img/background.png");
+  background-repeat: repeat;
+  @media (min-width: @width-large) {
+    height: @headerDepth-large;
+  }
+  @media (min-width: @width-default) and (max-width: @width-large) {
+    height: @headerDepth-default;
+  }
+  @media (min-width: @width-tablet) and (max-width: @width-default) {
+    height: @headerDepth-tablet;
+  }
+  @media (max-width: @width-tablet) {
+    height: @headerDepth-phone;
+  }
+}
+
+#header {
+
+  color: @baseFontColor;
+
+  #blogshot {
+    padding: 20px;
+    background-color: white;
+    width: 90%;
+    float: left;
+    @media (min-width: @width-large) {
+      margin-top: -@headerDepth-large;
+    }
+    @media (min-width: @width-default) and (max-width: @width-large) {
+      margin-top: -@headerDepth-default;
+    }
+    @media (min-width: @width-tablet) and (max-width: @width-default) {
+      margin-top: -@headerDepth-tablet;
+    }
+    @media (max-width: @width-tablet) {
+      margin: auto;
+      margin-top: -@headerDepth-phone;
+    }
+ }
+  h1 {
+    font-size: @baseFontSize;
+    line-height: @baseFontSize;
+    font-weight: bolder;
+    span {
+      float: left;
+    }
+    @media (max-width: @width-tablet) {
+      clear: both;
+    }
+    small {
+      color: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      @media (max-width: 1200px) {
+        display: none;
+      }
+    }
+  }
+  h2 {
+    font-size:@baseFontSize/3;
+    line-height:@baseLineHeight/3;
+    font-weight: lighter;
+    color: lighten(@baseFontColor, 40%);
+
+    padding-left: 3px;
+  }
+  ul {
+    margin-left: 0px;
+    li {
+      list-style: none;
+      float: left;
+      img {
+        width: @iconSize;
+        height: @iconSize;
+      }
+      @media (max-width: @width-tablet) {
+        margin: auto;
+      }
+    }
+  }
+}
