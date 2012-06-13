@@ -13,9 +13,9 @@
 @width-tablet: 767px;
 @width-phone: 480px;
 
-@headerDepth-large: 360px;
-@headerDepth-default: 265px;
-@headerDepth-tablet: 245px;
+@headerDepth-large: 345px;
+@headerDepth-default: 250px;
+@headerDepth-tablet: 235px;
 @headerDepth-phone: 0px;
 
 @media (min-width: @width-large) {
@@ -45,7 +45,7 @@
   }
 }
 
-#header {
+header {
 
   color: @baseFontColor;
 
@@ -67,7 +67,7 @@
       margin: auto;
       margin-top: -@headerDepth-phone;
     }
- }
+  }
   h1 {
     font-size: @baseFontSize;
     line-height: @baseFontSize;
@@ -94,27 +94,31 @@
     color: lighten(@baseFontColor, 40%);
 
     padding-left: 3px;
+    padding-top: 10px;
   }
   ul {
     margin-left: 0px;
     li {
       list-style: none;
       float: left;
-      img {
-        width: @iconSize;
-        height: @iconSize;
-      }
-      @media (max-width: @width-tablet) {
-        margin: auto;
-      }
+    }
+    .icon {
+      width: @iconSize;
+      height: @iconSize;
     }
   }
 }
 
 #blog {
   padding-bottom: 25px;
+  .nav-tabs {
+    margin-top: 40px;
+  }
   .tab-content {
-    width: 80%;
+    width: auto;
+    .well {
+      padding-bottom: 30px;
+    }
     a {
       float: right;
       font-size: smaller;
@@ -133,6 +137,9 @@
     padding-top: 15px;
     width: 100%;
     height: 100%;
+    @media (max-width: @width-tablet) {
+      display: none;
+    }
   }
   dl {
     margin-top: 5px;
@@ -143,3 +150,13 @@
   }
 }
 
+#twitter, #yelp {
+  @media (min-width: @width-tablet) {
+    float: right;
+  }
+}
+
+footer{
+  text-align: center;
+  padding: 15px;
+}
