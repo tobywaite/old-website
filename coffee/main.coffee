@@ -8,7 +8,7 @@ jQuery ->
   populateYelp()
   populateFlickr()
 
-initialize ->
+initialize = () ->
   # Create container on window object for templates.
   this.templates = {}
 
@@ -18,11 +18,11 @@ populateTWSRV = (section) ->
       $('##{ section }').html(Milk.render(this.templates[section], response))
   )
 
-populateBlog ->
+populateBlog = () ->
   populateTWSRV('blog')
 
-populateTwitter ->
+populateTwitter = () ->
   populateTWSRV('twitter')
 
-populateBlog ->
+populateBlog = () ->
   populateTWSRV('yelp')
