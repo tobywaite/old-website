@@ -24,5 +24,5 @@ populateBlog = () ->
 populateTwitter = () ->
   populateTWSRV('twitter')
 
-populateBlog = () ->
+populateYelp = () ->
   populateTWSRV('yelp')
