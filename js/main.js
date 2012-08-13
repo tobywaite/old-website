@@ -3,18 +3,13 @@
   var populateTWSRV;
 
   jQuery(function() {
-    initialize;
-
-    populateBlog;
-
-    populateGithub;
-
-    populateTwitter;
-
-    populateLastfm;
-
-    populateYelp;
-    return populateFlickr;
+    initialize();
+    populateBlog();
+    populateGithub();
+    populateTwitter();
+    populateLastfm();
+    populateYelp();
+    return populateFlickr();
   });
 
   initialize(function() {
