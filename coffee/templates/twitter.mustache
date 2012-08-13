@@ -1,0 +1,42 @@
+this.templates.twitter = """
+<!--
+
+{
+  "text": ,
+  "date": ,
+  "time": ,
+  "latest": true,
+}
+
+-->
+
+<h2>
+  twitter
+  <small><a href='http://www.twitter.com/tobywaite'>@tobywaite</a></small>
+</h2>
+<div class="row">
+  <div class='span1'>
+    <img class='logo' src='img/bird.png' alt='tweet tweet!'>
+  </div>
+  <div class='span4'>
+    <blockquote>
+      {{body}}
+      <small>blabbing to the universe, {{date}}@{{time}}</small>
+    </blockquote>
+    <ul class='pager'>
+      <li class='previous'>
+        <a href='#'>Older</a>
+      </li>
+      <li class='next {{#latest}}disabled{{/latest}}'>
+        <a href='#'>Newer</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!--
+
+Register callbacks on the previous and next buttons to get more tweet data and re-render the template.
+
+-->
+"""

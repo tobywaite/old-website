@@ -1,3 +1,4 @@
+this.templates.index = """
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,26 +45,26 @@
             <strong>Heads Up!</strong> This page is <em>very much</em> a work in progress. All the content is currently static and most of the links don't work. I'm working on it, I'm working on it...
           </div>
           <div id="blog" class="row">
-            <!-- blog template -->
+            {{> blog}}
           </div>
           <div class="row">
             <div class='feedbox span5' id='github'>
-              <!-- github template -->
+              {{> github}}
             </div>
             <div class='feedbox span5 ' id='twitter'>
-              <!-- twitter template -->
+              {{> twitter}}
             </div>
           </div>
           <div class="row">
             <div class='feedbox span5' id='lastfm'>
-              <!-- lastfm template -->
+              {{> lastfm}}
             </div>
             <div class='feedbox span5' id='yelp'>
-              <!-- yelp template -->
+              {{> yelp}}
             </div>
           </div>
           <div id="flickr" class="row">
-            <!-- flickr template -->
+            {{> flickr}}
           </div>
         </div>
       </section>
@@ -82,8 +83,7 @@
     <script src="js/bootstrap-tab.js"></script>
     <script src="js/bootstrap-transition.js"></script>
     <script src="js/bootstrap-carousel.js"></script>
-    <script src="js/coffee-script.js"></script>
-    <script type="text/coffeescript" src="coffee/main.coffee"></script>
-
+    <script src="js/main.js"></script>
   </body>
 </html>
+"""

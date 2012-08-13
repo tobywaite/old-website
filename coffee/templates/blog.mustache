@@ -1,0 +1,65 @@
+this.templates.blog = """
+<!--
+Data format:
+{
+  "entries": {
+    {
+      "id": "blog1",
+      "date": "6/11/12",
+      "title": "My Blog Post",
+      "lead": "This is a lead paragraph with lots of text",
+      "content": {
+        "paragraph": "This is a content paragraph with lots of text",
+        "paragraph": "This is a content paragraph with lots of text",
+        "paragraph": "This is a content paragraph with lots of text",
+      },
+    },
+    {
+      "id": "blog1",
+      "date": "6/11/12",
+      "title": "My Blog Post",
+      "lead": "This is a lead paragraph with lots of text",
+      "content": {
+        "paragraph": "This is a content paragraph with lots of text",
+        "paragraph": "This is a content paragraph with lots of text",
+        "paragraph": "This is a content paragraph with lots of text",
+      },
+    },
+  },
+}
+
+-->
+
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs hidden-phone">
+    {{#entries}}
+      <li><a href="{{id}}" data-toggle="tab">{{date}}</a></li>
+    {{/entries}}
+  </ul>
+  <div class='tab-content'>
+    {{#entries}}
+      <div id="{{id}}" class='tab-pane'>
+        <h2>Blog
+          <small>{{title}}</small>
+        </h2>
+        <div class='well'>
+          <p class='lead'>{{lead}}</p>
+          <div class='collapse' id='{{id}}-more'>
+            {{#content}}
+              <p>{{paragraph}}</p>
+            {{/content}}
+          </div>
+          <a data-toggle='collapse' data-target='#{{id}}-more'>Read More...</a>
+        </div>
+      </div>
+    {{/entries}}
+  </div>
+</div>
+
+<!--
+
+jQuery must select the first entry in the nav-tabs list and add the active class.
+It must also select the first tab-content div and apply the active class.
+
+-->
+"""

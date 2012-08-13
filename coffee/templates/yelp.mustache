@@ -1,0 +1,34 @@
+this.templates.yelp = """
+<!--
+{
+  "biz-name":
+  "biz-uri":
+  "location":
+  "date":
+  "time":
+  "tip":
+}
+-->
+
+<h2>
+  yelp
+  <small><a href='http://twaite.yelp.com/'>twaite</a></small>
+</h2>
+<div class="row">
+  <div class='span1'>
+    <img class='logo' src='img/yelp.png' alt="yelpers gonna yelp">
+  </div>
+  <div class='span4'>
+    <h3>
+      {{biz-name}}
+      <small><a href='{{biz-uri}}'>Latest Check-in</a></small>
+    </h3>
+    <p>{{location}}<small>{{date}}@{{time}}</small></p>
+    {{#tip}}
+    <blockquote>
+      {{tip}}
+    </blockquote>
+    {{/tip}}
+  </div>
+</div>
+"""

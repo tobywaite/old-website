@@ -1,0 +1,39 @@
+this.templates.flickr = """
+<!--
+{
+  "pictures": {
+    {
+      "uri": ,
+      "alt": ,
+      "title": ,
+      "description": ,
+    },
+  },
+}
+-->
+
+<div class="span9">
+  <h2>
+    flickr
+    <small>Pictures &amp; Adventures!</small>
+  </h2>
+</div>
+<div class="span2">
+<h2><small><a href='http://www.flickr.com/user/toby.waite'>toby.waite</a></small></h2>
+</div>
+<div id='flickrCarousel' class='carousel'>
+  <div class='carousel-inner'>
+    {{#pictures}}
+    <div class='item'>
+      <img src='{{uri}}' alt='{{alt}}'>
+      <div class='carousel-caption'>
+        <h4>{{title}}</h4>
+        <p>{{description}}</p>
+      </div>
+    </div>
+    {{/pictures}}
+  </div>
+  <a class='carousel-control left' href='#flickrCarousel' data-slide='prev'>&lsaquo;</a>
+  <a class='carousel-control right' href='#flickrCarousel' data-slide='next'>&rsaquo;</a>
+</div>
+"""

@@ -1,0 +1,42 @@
+this.templates.lastfm = """
+<!--
+
+{
+  "now-playing": true,
+  "song": "Song Name",
+  "artist": "Artist Name",
+  "album": "Album Name",
+  "art-uri": "http://www.art.com/album/haters.jpg"
+}
+
+-->
+
+<h2>
+  last.fm
+  <small><a href='http://www.last.fm/users/thebrokenfish'>thebrokenfish</a></small>
+</h2>
+<div class="row">
+  <div class='span1'>
+    <img class='logo' src='img/lastfm_logo.png' alt="everyday we scrobblin'">
+  </div>
+  <div class='span3'>
+    <h3>
+      Listening to...
+      {{#now-playing}}
+        <small>Now playing!</small>
+      {{/now-playing}}
+    </h3>
+    <dl class='dl-horizontal'>
+      <dt>Song</dt>
+      <dd>{{song}}</dd>
+      <dt>Artist</dt>
+      <dd>{{artist}}</dd>
+      <dt>Album</dt>
+      <dd>{{album}}</dd>
+    </dl>
+  </div>
+  <div class='span1'>
+    <img class='logo' src='{{art-uri}}' alt="album-art">
+  </div>
+</div>
+"""
