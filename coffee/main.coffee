@@ -1,4 +1,4 @@
-$ ->
+jQuery ->
   initialize
   # Load each section of the page asynchronously
   populateBlog
