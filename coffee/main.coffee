@@ -2,11 +2,11 @@ jQuery ->
   initialize()
   # Load each section of the page asynchronously
   populateBlog()
-  populateGithub()
+  #populateGithub()
   populateTwitter()
-  populateLastfm()
+  #populateLastfm()
   populateYelp()
-  populateFlickr()
+  #populateFlickr()
 
 initialize = () ->
   # Create container on window object for templates.
