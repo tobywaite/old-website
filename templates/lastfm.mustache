@@ -1,11 +1,11 @@
 <!--
 
 {
-  "now-playing": true,
+  "nowPlaying": true,
   "song": "Song Name",
   "artist": "Artist Name",
   "album": "Album Name",
-  "art-uri": "http://www.art.com/album/haters.jpg"
+  "artUrl": "http://www.art.com/album/haters.jpg"
 }
 
 -->
@@ -21,9 +21,9 @@
   <div class='span3'>
     <h3>
       Listening to...
-      {{#now-playing}}
+      {{#nowPlaying}}
         <small>Now playing!</small>
-      {{/now-playing}}
+      {{/nowPlaying}}
     </h3>
     <dl class='dl-horizontal'>
       <dt>Song</dt>
@@ -35,6 +35,6 @@
     </dl>
   </div>
   <div class='span1'>
-    <img class='logo' src='{{art-uri}}' alt="album-art">
+    <img class='logo' src="{{artUrl}}" alt="album-art">
   </div>
 </div>

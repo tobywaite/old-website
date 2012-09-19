@@ -6,9 +6,7 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   jQuery(function() {
-    var blog, flickr, github, lastfm, twitter, yelp;
-    blog = new FeedModule('blog').render();
-    flickr = new FlickrModule().render();
+    var github, lastfm, twitter, yelp;
     github = new GithubModule().render();
     lastfm = new LastFMModule().render();
     twitter = new FeedModule('twitter').render();
@@ -43,7 +41,7 @@
         url: this.source,
         async: false
       }).done(function(response) {
-        return _this.context = response;
+        return _this.context = _this.formatResponse(response);
       });
     };
 
@@ -55,6 +53,11 @@
       }).done(function(response) {
         return _this.template = response;
       });
+    };
+
+    FeedModule.prototype.formatResponse = function(response) {
+      "When loading the context, reformat the response data to the appropriate\ncontext format. This should probably be overridden by extending classes.";
+      return response;
     };
 
     return FeedModule;
@@ -70,6 +73,37 @@
       this.source = 'https://api.github.com/users/tobywaite/repos';
     }
 
+    GithubModule.prototype.formatResponse = function(response) {
+      var format, repo, repos;
+      format = function(repo) {
+        var formatDate, formatTime;
+        formatDate = function(datestring) {
+          return datestring.slice(0, 10);
+        };
+        formatTime = function(datestring) {
+          return datestring.slice(11, 19);
+        };
+        return {
+          repoUrl: repo.html_url,
+          repoName: repo.name,
+          repoDesc: repo.description,
+          commitMessage: "no commit data",
+          commitDate: formatDate(repo.updated_at),
+          commitTime: formatTime(repo.updated_at)
+        };
+      };
+      repos = (function() {
+        var _i, _len, _results;
+        _results = [];
+        for (_i = 0, _len = response.length; _i < _len; _i++) {
+          repo = response[_i];
+          _results.push(format(repo));
+        }
+        return _results;
+      })();
+      return repos[0];
+    };
+
     return GithubModule;
 
   })(FeedModule);
@@ -82,6 +116,31 @@
       LastFMModule.__super__.constructor.call(this, 'lastfm');
       this.source = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=thebrokenfish&api_key=b25b959554ed76058ac220b7b2e0a026&format=json';
     }
+
+    LastFMModule.prototype.formatResponse = function(response) {
+      var format, track, tracks;
+      format = function(track) {
+        var _ref;
+        return {
+          nowPlaying: (_ref = track['@attr']) != null ? _ref.nowplaying : void 0,
+          song: track.name,
+          artist: track.artist.name,
+          album: track.album['#text'],
+          artUrl: track.image[1]['#text']
+        };
+      };
+      tracks = (function() {
+        var _i, _len, _ref, _results;
+        _ref = response.recenttracks.track;
+        _results = [];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          track = _ref[_i];
+          _results.push(format(track));
+        }
+        return _results;
+      })();
+      return tracks[0];
+    };
 
     return LastFMModule;
 
